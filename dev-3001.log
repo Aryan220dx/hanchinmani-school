@@ -1,0 +1,35 @@
+
+> hanchinmani-school@1.0.0 dev
+> next dev -p 3001
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 6s
+ ○ Compiling / ...
+ ✓ Compiled / in 10.1s (1556 modules)
+ GET / 200 in 10573ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 8.2s (1530 modules)
+ GET /about 200 in 8486ms
+ ○ Compiling /admissions ...
+ ✓ Compiled /admissions in 1108ms (1664 modules)
+ GET /admissions 200 in 1376ms
+ ✓ Compiled /academics in 428ms (1668 modules)
+ GET /academics 200 in 528ms
+ ✓ Compiled /campus in 496ms (1670 modules)
+ GET /campus 200 in 629ms
+ ○ Compiling /gallery ...
+ ✓ Compiled /gallery in 1779ms (1676 modules)
+ GET /gallery 200 in 1914ms
+ ✓ Compiled /contact in 479ms (1678 modules)
+ GET /contact 200 in 614ms
+ ✓ Compiled /mandatory-disclosure in 410ms (1682 modules)
+ GET /mandatory-disclosure 200 in 515ms
+ ✓ Compiled /about/founders-message in 489ms (1684 modules)
+ GET /about/founders-message 200 in 552ms
+ ○ Compiling /about/vision-mission ...
+ ✓ Compiled /about/vision-mission in 530ms (1686 modules)
+ GET /about/vision-mission 200 in 619ms
+ GET / 200 in 140ms
