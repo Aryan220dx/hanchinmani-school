@@ -33,3 +33,5 @@
  ✓ Compiled /about/vision-mission in 530ms (1686 modules)
  GET /about/vision-mission 200 in 619ms
  GET / 200 in 140ms
+   Reload env: .env.local
+ ✓ Compiled in 708ms (1588 modules)

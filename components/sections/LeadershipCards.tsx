@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { leaders } from "@/lib/data/site";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { fadeInUp, hoverLift, staggerContainer } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 
 export function LeadershipCards() {
   return (
@@ -19,7 +20,13 @@ export function LeadershipCards() {
           {leaders.map((leader) => (
             <motion.article key={leader.name} variants={fadeInUp} whileHover={hoverLift} className="group relative overflow-hidden rounded-2xl bg-slate-900 shadow-glass">
               <div className="relative aspect-[3/4]">
-                <Image src={leader.image} alt={leader.name} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition duration-700 group-hover:scale-105" />
+                <Image
+                  src={leader.image}
+                  alt={leader.name}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className={cn("object-cover transition duration-700 group-hover:scale-105", leader.imagePosition)}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
               </div>
               <div className="absolute inset-x-0 bottom-0 p-6 text-white">

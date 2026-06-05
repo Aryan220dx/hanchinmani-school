@@ -1,6 +1,7 @@
 import {
   Atom,
   BookOpen,
+  Bot,
   BrainCircuit,
   Bus,
   Camera,
@@ -16,7 +17,6 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
-  Telescope,
   UsersRound
 } from "lucide-react";
 
@@ -74,10 +74,11 @@ export const leaders = [
       "Since 1994 his service in shaping the careers of thousands of students is remarkable. Today, the group of Hanchinmani Institutes means a large family of 200+ faculties, educators and educationists."
   },
   {
-    name: "Shri. Manoj P Hanchinmani",
-    title: "Founder Secretary",
-    organization: "Hanchinmani Institutes, Dharwad",
-    image: "/images/leadership/manoj-hanchinmani.jpg",
+    name: "Shri Milind P. Hanchinmani",
+    title: "Secretary",
+    organization: "Shantesh Education Society",
+    image: "/images/leadership/milind-hanchinmani.jpg",
+    imagePosition: "object-[center_18%]",
     quote:
       "A technocrat and educational entrepreneur who joined Hanchinmani Institutes in 2011, playing a pivotal role in building Team Hanchinmani with a vision for North Karnataka."
   },
@@ -92,10 +93,10 @@ export const leaders = [
 ];
 
 export const features = [
-  { title: "AI & Robotics", description: "Training for software coding, AI and robotics from the middle years.", icon: BrainCircuit },
-  { title: "Telescope Astronomy", description: "Telescope facility for astronomical study and scientific curiosity.", icon: Telescope },
+  { title: "Artificial Intelligence (AI)", description: "Training for software coding and artificial intelligence from the middle years.", icon: BrainCircuit },
+  { title: "Robotics", description: "Hands-on robotics education encouraging innovation, engineering skills and practical problem solving.", icon: Bot },
   { title: "Science & Math Labs", description: "Experimental study through modern mathematics, composite science and computer labs.", icon: FlaskConical },
-  { title: "E-Library", description: "A spacious, well-stocked library with e-library facility for guided learning.", icon: Library },
+  { title: "Library", description: "A spacious, well-stocked library that supports reading, research and guided learning.", icon: Library },
   { title: "Music, Art & Yoga", description: "Specialized coaching for art, music, yoga, sports and self-defence.", icon: Music },
   { title: "Skill-Based Education", description: "Competency and skill-based education with experiential learning.", icon: Sparkles },
   { title: "Professional Faculty", description: "Professionally qualified and trained teachers with continuous quality audits.", icon: UsersRound },
