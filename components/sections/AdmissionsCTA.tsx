@@ -12,7 +12,7 @@ export function AdmissionsCTA() {
             <p className="mt-5 max-w-2xl text-white/76">Begin with an application or schedule a conversation with the school office in Dharwad.</p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row md:flex-col">
-            <Button href="/admissions" variant="amber" size="lg">Begin Application <ArrowRight className="h-5 w-5" /></Button>
+            <Button href="/contact" variant="amber" size="lg">Begin Application <ArrowRight className="h-5 w-5" /></Button>
             <Button href="/mandatory-disclosure" variant="glass" size="lg">Download Prospectus <FileDown className="h-5 w-5" /></Button>
           </div>
         </div>

@@ -73,7 +73,7 @@ export function Navbar() {
             <Button href="/login" variant={scrolled ? "outline" : "glass"} size="sm">
               <LogIn className="h-4 w-4" /> Login
             </Button>
-            <Button href="/admissions" variant="amber" size="sm">
+            <Button href="/contact" variant="amber" size="sm">
               Apply Now
             </Button>
           </div>
@@ -99,7 +99,7 @@ export function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <Button href="/admissions" variant="amber" size="lg" className="mt-8 w-full">
+              <Button href="/contact" variant="amber" size="lg" className="mt-8 w-full">
                 Apply Now
               </Button>
             </motion.div>

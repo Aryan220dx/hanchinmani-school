@@ -25,7 +25,7 @@ export function HeroSection() {
           Where curiosity meets opportunity in North Karnataka&apos;s premier CBSE institution, guided by 200+ faculties, educators and educationists.
         </motion.p>
         <motion.div variants={fadeInUp} className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <Button href="/admissions" variant="amber" size="lg">
+          <Button href="/contact" variant="amber" size="lg">
             Apply Now <ArrowRight className="h-5 w-5" />
           </Button>
           <Button href="/contact" variant="glass" size="lg">

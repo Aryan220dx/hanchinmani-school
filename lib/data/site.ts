@@ -45,7 +45,7 @@ export const navItems = [
       { label: "Board of Members", href: "/about/board-of-members" }
     ]
   },
-  { label: "Admission", href: "/admissions" },
+  { label: "Get In Touch", href: "/contact" },
   { label: "Academics", href: "/academics" },
   {
     label: "Our Campus",
@@ -167,7 +167,7 @@ export const disclosureRows = [
 ];
 
 export const quickActions = [
-  { label: "Begin Application", href: "/admissions", icon: ClipboardList },
+  { label: "Get In Touch", href: "/contact", icon: ClipboardList },
   { label: "View Gallery", href: "/gallery", icon: Camera },
   { label: "Explore Academics", href: "/academics", icon: Code2 },
   { label: "Mandatory Disclosure", href: "/mandatory-disclosure", icon: CheckCircle2 },
