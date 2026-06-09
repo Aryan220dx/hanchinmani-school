@@ -33,8 +33,10 @@ export function Navbar() {
         <nav
           aria-label="Main navigation"
           className={cn(
-            "mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 py-3 transition duration-500 md:px-6",
-            scrolled ? "glass shadow-glass" : "bg-white/20 text-white backdrop-blur-md"
+            "mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 py-3 transition-all duration-500 ease-out md:px-6",
+            scrolled
+              ? "border border-black/[0.06] bg-white/[0.95] text-slate-900 shadow-[0_18px_55px_-28px_rgba(15,23,42,0.55)] backdrop-blur-2xl"
+              : "border border-white/20 bg-white/20 text-white shadow-none backdrop-blur-md"
           )}
         >
           <Link href="/" className="focus-ring flex items-center gap-3 rounded-full">
@@ -48,7 +50,7 @@ export function Navbar() {
                   href={item.href}
                   className={cn(
                     "focus-ring flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold transition",
-                    scrolled ? "text-slate-700 hover:bg-primary/8 hover:text-primary" : "text-white/88 hover:bg-white/12 hover:text-white",
+                    scrolled ? "text-slate-800 hover:bg-primary/8 hover:text-primary" : "text-white/88 hover:bg-white/12 hover:text-white",
                     pathname === item.href && (scrolled ? "text-primary" : "text-white")
                   )}
                 >
