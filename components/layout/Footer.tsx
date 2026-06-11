@@ -8,9 +8,9 @@ export function Footer() {
     <footer className="bg-[#062f3a] text-white">
       <div className="container-padded grid gap-10 py-16 md:grid-cols-[1.3fr_.8fr_.9fr_1.2fr]">
         <div>
-          <Image src="/images/logo-school.jpg" alt="Hanchinmani School logo" width={76} height={76} className="rounded-full bg-white" />
+          <Image src="/images/logo.png" alt="Hanchinmani School Logo" width={76} height={76} className="rounded-full bg-white" />
           <h2 className="mt-5 font-display text-2xl font-semibold">{contact.shortName}</h2>
-          <p className="mt-4 max-w-sm text-white/70">Shaping the Architects of Tomorrow in Dharwad with CBSE academics, faculty depth and future-ready learning.</p>
+          <p className="mt-4 max-w-sm text-white/70">Shaping the Architects of Tomorrow in Hubballi with CBSE academics, faculty depth and future-ready learning.</p>
         </div>
         <div>
           <h3 className="font-semibold text-amber">Quick Links</h3>

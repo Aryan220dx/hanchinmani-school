@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Send } from "lucide-react";
+import { Home, Send } from "lucide-react";
 import { useEffect, useState } from "react";
 import { type Resolver, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/Button";
@@ -17,7 +17,7 @@ import {
 } from "@/lib/enquiry/schema";
 import { cn } from "@/lib/utils";
 
-type FormValues = Record<string, string>;
+type FormValues = Record<string, string | boolean>;
 
 const defaultsByType: Record<EnquiryType, FormValues> = {
   general: basicEnquiryDefaults,
@@ -30,11 +30,11 @@ function FieldError({ message }: { message?: string }) {
   return message ? <span className="text-xs text-red-600">{message}</span> : null;
 }
 
-function TextField({ name, label, placeholder, register, error }: { name: string; label: string; placeholder: string; register: ReturnType<typeof useForm<FormValues>>["register"]; error?: string }) {
+function TextField({ name, label, placeholder, register, error, type = "text" }: { name: string; label: string; placeholder: string; register: ReturnType<typeof useForm<FormValues>>["register"]; error?: string; type?: string }) {
   return (
     <label className="grid gap-2 text-sm font-semibold text-slate-700">
       {label}
-      <input className="focus-ring rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal" placeholder={placeholder} {...register(name)} />
+      <input className="focus-ring rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal" type={type} placeholder={placeholder} {...register(name)} />
       <FieldError message={error} />
     </label>
   );
@@ -126,7 +126,7 @@ export function EnquiryHub({ initialType = "general" }: { initialType?: EnquiryT
           <>
             <TextField name="name" label="Name" placeholder="Your name" register={register} error={errors.name?.message} />
             <TextField name="email" label="Email" placeholder="Email address" register={register} error={errors.email?.message} />
-            <TextField name="phone" label="Phone Number" placeholder="Mobile number" register={register} error={errors.phone?.message} />
+            <TextField name="phone" label="Phone Number" placeholder="10-digit mobile number" register={register} error={errors.phone?.message} type="tel" />
             <label className="grid gap-2 text-sm font-semibold text-slate-700">
               Message
               <textarea className="focus-ring min-h-32 rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal" placeholder="How can the school office help?" {...register("message")} />
@@ -142,9 +142,9 @@ export function EnquiryHub({ initialType = "general" }: { initialType?: EnquiryT
               <div className="mt-4 grid gap-5">
                 <TextField name="studentName" label="Name of Student" placeholder="Student name" register={register} error={errors.studentName?.message} />
                 <label className="grid gap-2 text-sm font-semibold text-slate-700">
-                  Class Seeking Admission
+                  Class Applying For
                   <select className="focus-ring rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal" {...register("classSeekingAdmission")}>
-                    <option value="">Select class</option>
+                    <option value="" disabled>Select Class</option>
                     {admissionClassOptions.map((option) => (
                       <option value={option} key={option}>
                         {option}
@@ -159,12 +159,14 @@ export function EnquiryHub({ initialType = "general" }: { initialType?: EnquiryT
             </div>
 
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber">Parent Details</p>
-              <div className="mt-4 grid gap-5">
-                <TextField name="fatherName" label="Father's Name" placeholder="Father's name" register={register} error={errors.fatherName?.message} />
-                <TextField name="motherName" label="Mother's Name" placeholder="Mother's name" register={register} error={errors.motherName?.message} />
-                <TextField name="parentEmail" label="Parent Email Address" placeholder="Parent email address" register={register} error={errors.parentEmail?.message} />
-                <TextField name="contactNumber" label="Contact Number" placeholder="Mobile number" register={register} error={errors.contactNumber?.message} />
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber">Parent / Guardian Information</p>
+              <div className="mt-4 grid gap-5 md:grid-cols-2">
+                <TextField name="fatherName" label="Father's Name" placeholder="Enter father's full name" register={register} error={errors.fatherName?.message} />
+                <TextField name="fatherPhone" label="Father's Contact Number" placeholder="10-digit mobile number" register={register} error={errors.fatherPhone?.message} type="tel" />
+                <TextField name="motherName" label="Mother's Name" placeholder="Enter mother's full name" register={register} error={errors.motherName?.message} />
+                <TextField name="motherPhone" label="Mother's Contact Number" placeholder="10-digit mobile number" register={register} error={errors.motherPhone?.message} type="tel" />
+                <TextField name="parentEmail" label="Parent Email Address" placeholder="Parent email address" register={register} error={errors.parentEmail?.message} type="email" />
+                <TextField name="contactNumber" label="Contact Number" placeholder="10-digit mobile number" register={register} error={errors.contactNumber?.message} type="tel" />
               </div>
             </div>
 
@@ -177,18 +179,22 @@ export function EnquiryHub({ initialType = "general" }: { initialType?: EnquiryT
               </label>
             </div>
 
-            <fieldset className="grid gap-3 text-sm font-semibold text-slate-700">
-              <legend>Hostel Facility Required</legend>
-              <div className="flex gap-3">
-                {["Yes", "No"].map((option) => (
-                  <label className="flex flex-1 items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal" key={option}>
-                    <input className="h-4 w-4 accent-primary" type="radio" value={option} {...register("hostelFacilityRequired")} />
-                    {option}
-                  </label>
-                ))}
+            <div className="space-y-2">
+              <label className="flex cursor-pointer items-start gap-3 text-sm font-semibold text-slate-700">
+                <input className="mt-1 h-4 w-4 rounded border-slate-300 accent-primary" type="checkbox" {...register("transportRequired")} />
+                <span>Transport Facility Required</span>
+              </label>
+              <p className="ml-7 text-xs text-text-muted">Transport services are available within city limits only.</p>
+            </div>
+
+            <div className="space-y-2 rounded-xl border border-primary/20 bg-primary/8 p-5">
+              <div className="flex items-center gap-2 text-base font-semibold text-primary">
+                <Home className="h-5 w-5" />
+                Hostel Facilities
               </div>
-              <FieldError message={errors.hostelFacilityRequired?.message} />
-            </fieldset>
+              <p className="text-sm leading-6 text-slate-700">Hostel facilities are available only for students from Grade 6 onwards.</p>
+              <p className="text-sm leading-6 text-slate-700">Separate hostel accommodations are available for boys and girls under dedicated supervision.</p>
+            </div>
           </>
         ) : null}
 
@@ -196,7 +202,7 @@ export function EnquiryHub({ initialType = "general" }: { initialType?: EnquiryT
           <>
             <TextField name="parentName" label="Parent Name" placeholder="Parent name" register={register} error={errors.parentName?.message} />
             <TextField name="parentEmail" label="Parent Email Address" placeholder="Parent email address" register={register} error={errors.parentEmail?.message} />
-            <TextField name="contactNumber" label="Contact Number" placeholder="Mobile number" register={register} error={errors.contactNumber?.message} />
+            <TextField name="contactNumber" label="Contact Number" placeholder="10-digit mobile number" register={register} error={errors.contactNumber?.message} type="tel" />
             <TextField name="studentName" label="Student Name" placeholder="Student name" register={register} error={errors.studentName?.message} />
             <TextField name="className" label="Class" placeholder="Class" register={register} error={errors.className?.message} />
             <label className="grid gap-2 text-sm font-semibold text-slate-700">
@@ -211,7 +217,7 @@ export function EnquiryHub({ initialType = "general" }: { initialType?: EnquiryT
           <>
             <TextField name="parentName" label="Parent Name" placeholder="Parent name" register={register} error={errors.parentName?.message} />
             <TextField name="parentEmail" label="Parent Email Address" placeholder="Parent email address" register={register} error={errors.parentEmail?.message} />
-            <TextField name="contactNumber" label="Contact Number" placeholder="Mobile number" register={register} error={errors.contactNumber?.message} />
+            <TextField name="contactNumber" label="Contact Number" placeholder="10-digit mobile number" register={register} error={errors.contactNumber?.message} type="tel" />
             <TextField name="areaLocation" label="Area / Location" placeholder="Area or pickup location" register={register} error={errors.areaLocation?.message} />
             <TextField name="studentName" label="Student Name" placeholder="Student name" register={register} error={errors.studentName?.message} />
             <label className="grid gap-2 text-sm font-semibold text-slate-700">

@@ -280,7 +280,9 @@ export async function sendAdmissionEmail(input: AdmissionEnquiryInput) {
         heading: "Parent Information",
         rows: [
           ["Father's Name", input.fatherName],
+          ["Father's Contact Number", input.fatherPhone],
           ["Mother's Name", input.motherName],
+          ["Mother's Contact Number", input.motherPhone],
           ["Parent Email Address", input.parentEmail],
           ["Contact Number", input.contactNumber]
         ]
@@ -291,7 +293,8 @@ export async function sendAdmissionEmail(input: AdmissionEnquiryInput) {
           ["Previous School", formatOptional(input.previousSchoolName)],
           ["Previous Class Studied", formatOptional(input.previousClassStudied)],
           ["Address", input.residentialAddress],
-          ["Hostel Facility Required", input.hostelFacilityRequired]
+          ["Transport Facility Required", input.transportRequired ? "Yes" : "No"],
+          ["Hostel Facility Required", formatOptional(input.hostelFacilityRequired)]
         ]
       }
     ])

@@ -11,7 +11,7 @@ export function AcademicJourney() {
     <section className="bg-surface py-24 md:py-32">
       <div className="container-padded">
         <SectionHeader eyebrow="Academic Journey" title="Primary to Senior Secondary" description="A clear CBSE pathway that grows from belonging and confidence into scientific curiosity and disciplined preparation." />
-        <motion.div className="relative mt-16 grid gap-8 md:grid-cols-3" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+        <motion.div className="relative mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
           <div className="absolute left-0 right-0 top-10 hidden h-px bg-primary/20 md:block" />
           {journey.map((stage, index) => (
             <motion.article variants={fadeInUp} className="relative rounded-2xl bg-white p-7 shadow-glass" key={stage.title}>

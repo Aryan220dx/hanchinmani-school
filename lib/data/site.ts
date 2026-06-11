@@ -19,17 +19,17 @@ import {
   Star,
   UsersRound
 } from "lucide-react";
+import { SCHOOL_INFO } from "@/lib/schoolInfo";
 
 export const contact = {
-  institution: "Smt. Vidya P Hanchinmani International School, Dharwad",
-  shortName: "Hanchinmani School",
+  institution: "Smt. Vidya P Hanchinmani International School, Hubballi",
+  shortName: SCHOOL_INFO.name,
   society: "Shantesh Education Society",
-  address:
-    "Behind Shri Mahalaxmi Petrol Bunk, Nuggikeri, Kalaghatagi Road, Dharwad - 580114, Karnataka, India",
-  officePhone: "0836-2463232 / 0836-2463234",
-  mobile: "6361120816 / 9019806938 / 9019861347",
-  email: "hanchinmani.school@gmail.com",
-  website: "hanchinmanicbseschool.com"
+  address: SCHOOL_INFO.address.display,
+  officePhone: SCHOOL_INFO.contact.phone,
+  mobile: SCHOOL_INFO.contact.mobile,
+  email: SCHOOL_INFO.contact.email,
+  website: SCHOOL_INFO.website.replace(/^https?:\/\//, "")
 };
 
 export const navItems = [
@@ -47,6 +47,7 @@ export const navItems = [
   },
   { label: "Get In Touch", href: "/contact" },
   { label: "Academics", href: "/academics" },
+  { label: "Little Learners", href: "/little-learners" },
   {
     label: "Our Campus",
     href: "/campus",
@@ -105,22 +106,28 @@ export const features = [
 
 export const journey = [
   {
-    range: "Primary",
-    title: "Foundation Years",
-    description: "Phonics, creative arts, emotional development and habits of curiosity.",
-    points: ["English language confidence", "Creative expression", "Age-appropriate enrichment"]
+    range: "Grades 1-5",
+    title: "Primary School",
+    description: "Building the foundation for a lifelong love of learning.",
+    points: ["Foundational literacy", "Language development", "Activity-based learning", "Creative expression"]
   },
   {
-    range: "Middle",
-    title: "Discovery Years",
-    description: "Advanced STEM exposure, bilingual confidence and early leadership practice.",
-    points: ["Science and math labs", "AI, coding and robotics", "Telescope astronomy"]
+    range: "Grades 6-8",
+    title: "Middle School",
+    description: "Expanding horizons through exploration and discovery.",
+    points: ["STEM exposure", "Coding and robotics", "Laboratory learning", "Leadership opportunities"]
   },
   {
-    range: "Senior Secondary",
-    title: "Direction Years",
-    description: "CBSE academic depth with mentoring for future study and competitive pathways.",
-    points: ["Foundation courses from Grade 6", "Career guidance", "Quality academic audits"]
+    range: "Grades 9-10",
+    title: "Secondary School",
+    description: "Focused preparation for academic excellence.",
+    points: ["CBSE curriculum", "Academic excellence", "Career awareness", "Competitive preparation"]
+  },
+  {
+    range: "Grades 11-12 (PU I & PU II)",
+    title: "Senior Secondary School",
+    description: "Pathways to higher education and career success.",
+    points: ["Science Stream", "Commerce Stream", "Competitive Exam Preparation", "Career Guidance", "Higher Education Readiness"]
   }
 ];
 
@@ -151,7 +158,7 @@ export const campusFacilities = [
   { id: "laboratories", title: "Laboratories", image: "/images/campus/laboratory.jpg", icon: Atom, body: "Modern mathematics, composite science and computer laboratory experiences support experimental study." },
   { id: "library", title: "Library & E-Library", image: "/images/campus/library.jpg", icon: BookOpen, body: "A spacious library and e-library facility create a calm culture of reading and research." },
   { id: "security", title: "Security & Safety", image: "/images/campus/security.jpg", icon: ShieldCheck, body: "Security, safety practices and medical support help parents trust the daily environment." },
-  { id: "transportation", title: "Transportation", image: "/images/campus/transportation.jpg", icon: Bus, body: "Transportation access supports families across Dharwad and nearby areas." },
+  { id: "transportation", title: "Transportation", image: "/images/campus/transportation.jpg", icon: Bus, body: "Transportation access supports families across Hubballi and nearby areas." },
   { id: "extra-curricular", title: "Extra Curricular Activities", image: "/images/campus/safety.jpg", icon: Dumbbell, body: "Music, art-craft, self-defence, skating, yoga and outdoor games complete the school day." }
 ];
 

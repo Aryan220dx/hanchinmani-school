@@ -3,7 +3,7 @@ export default function VisionMissionPage() {
     <section className="bg-surface pb-24 pt-36">
       <div className="container-padded grid gap-6 md:grid-cols-2">
         {[
-          ["Vision", "To develop Smt. V.P Hanchinmani International School, Dharwad into a centre of excellence rooted in intellectual growth and civic responsibility."],
+          ["Vision", "To develop Smt. V.P Hanchinmani International School, Hubballi into a centre of excellence rooted in intellectual growth and civic responsibility."],
           ["Mission", "To mould young students into upright citizens through creative teaching, trained faculty, disciplined academics and holistic development."]
         ].map(([title, body]) => (
           <article className="rounded-2xl bg-white p-8 shadow-glass md:p-12" key={title}>

@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <section className="bg-surface pb-24 pt-36">
       <div className="container-padded">
-        <SectionHeader eyebrow="About School" title="Rooted in Dharwad, Built for Tomorrow" description="An editorial overview of the institution, the Shantesh Education Society and the academic trust carried from the legacy site." />
+        <SectionHeader eyebrow="About School" title="Rooted in Hubballi, Built for Tomorrow" description="An editorial overview of the institution, the Shantesh Education Society and the academic trust carried from the legacy site." />
         <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-center">
           <div className="space-y-6 text-lg leading-8 text-text-muted">
             <p>{contact.institution} is a pioneer education centre for creative teaching, founded by Shri. Prahlad R Hanchinmani and mentored by Dr. Gururaj Karajagi.</p>

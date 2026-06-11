@@ -16,7 +16,7 @@ export function HeroSection() {
       <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#062f3a] to-transparent" />
       <motion.div className="container-padded relative z-10 pt-28" initial="hidden" animate="visible" variants={staggerContainer}>
         <motion.p variants={fadeInUp} className="text-sm font-semibold uppercase tracking-[0.22em] text-amber">
-          Smt. Vidya P Hanchinmani International School, Dharwad
+          Smt. Vidya P Hanchinmani International School, Hubballi
         </motion.p>
         <motion.h1 variants={fadeInUp} className="mt-6 max-w-4xl font-display text-5xl font-bold leading-[1.05] md:text-7xl">
           Shaping the Architects of Tomorrow
@@ -33,7 +33,7 @@ export function HeroSection() {
           </Button>
         </motion.div>
         <motion.div variants={fadeInUp} className="mt-14 grid gap-3 sm:grid-cols-3">
-          {["200+ Faculty", "CBSE Affiliated", "Dharwad, Karnataka"].map((stat) => (
+          {["200+ Faculty", "CBSE Affiliated", "Hubballi, Karnataka"].map((stat) => (
             <div className="dark-glass rounded-full px-5 py-3 text-sm font-semibold" key={stat}>
               {stat}
             </div>

@@ -9,7 +9,7 @@ export function AdmissionsCTA() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber">Admissions</p>
             <h2 className="mt-5 font-display text-4xl font-semibold leading-tight md:text-6xl">Your Child&apos;s Future Starts Here</h2>
-            <p className="mt-5 max-w-2xl text-white/76">Begin with an application or schedule a conversation with the school office in Dharwad.</p>
+            <p className="mt-5 max-w-2xl text-white/76">Begin with an application or schedule a conversation with the school office in Hubballi.</p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row md:flex-col">
             <Button href="/contact" variant="amber" size="lg">Begin Application <ArrowRight className="h-5 w-5" /></Button>
